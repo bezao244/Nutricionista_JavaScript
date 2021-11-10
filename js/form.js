@@ -7,18 +7,21 @@ botaoAdicionar.addEventListener("click", function(event) {
 
     //ultilizando a funcao para obter as informacoes do paciente
     var paciente = obtemPacienteDoFormulario(form);
-   
-    //ultilizando as informacoes para montar a tr
-    var pacienteTr = montaTr(paciente);
     
-    //pegando a tabela e colocando a tr nela
-    var tabela = document.querySelector("#tabela-pacientes");
-    tabela.appendChild(pacienteTr);
-
+   //usando a funcao de adicionar paciente
+    adicionaPaciente(paciente);
     //resetando o formulario apos o clique de adicao
     form.reset();
 });    
+//criando uma funcao de adcionar paciente 
+function adicionaPaciente(paciente){
+    //ultilizando as informacoes para montar a tr
+    var pacienteTr = montaTr(paciente);
 
+    //pegando a tabela e colocando a tr nela
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+}
 // criando um funcao para criar um objeto paciente
 function obtemPacienteDoFormulario(form) {
 
