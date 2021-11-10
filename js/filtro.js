@@ -13,8 +13,10 @@ campoFiltro.addEventListener("input", function() {
             var tdNome = paciente.querySelector(".info-nome");
             //pegando o valor do td
             var nome = tdNome.textContent;
+            //criando uma expressao regular para fazer um melhor filtro
+            var expressao = new RegExp(this.value, "i");
             //fazendo a filtragem por meio de adicao de classes com display none e caso o filtro der tira a //classe
-            if(nome != this.value){
+            if(!expressao.test(nome)){
                 paciente.classList.add("invisivel");
             }else{
                 paciente.classList.remove("invisivel");
